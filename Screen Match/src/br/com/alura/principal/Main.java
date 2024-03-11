@@ -1,19 +1,19 @@
+package br.com.alura.principal;
+
 import br.com.alura.screenmatch.calculos.CalculadoraDeTempo;
 import br.com.alura.screenmatch.calculos.FiltroRecomendacao;
 import br.com.alura.screenmatch.modelo.Episodio;
 import br.com.alura.screenmatch.modelo.Filme;
 import br.com.alura.screenmatch.modelo.Serie;
 
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
-        Filme filme = new Filme();
-        filme.setNome("Vingadores");
-        filme.setAnoDeLancamento(2011);
+        Filme filme = new Filme("Vingadores", 2013);
         filme.setDuracaoEmMinutos(220);
 
-        Filme filme2 = new Filme();
-        filme2.setNome("Kingsman");
-        filme2.setAnoDeLancamento(2019);
+        Filme filme2 = new Filme("Kingsman", 2017);
         filme2.setDuracaoEmMinutos(160);
 
         filme.exibeFichaTecnica();
@@ -24,9 +24,7 @@ public class Main {
 
         System.out.println(filme.pegaMedia());
 
-        Serie serie = new Serie();
-        serie.setNome("Dark");
-        serie.setAnoDeLancamento(2019);
+        Serie serie = new Serie("Dark", 2019);
         serie.exibeFichaTecnica();
         serie.setTemporadas(3);
         serie.setEpisodiosPorTemporada(12);
@@ -47,6 +45,19 @@ public class Main {
         episodio.setSerie(serie);
         episodio.setTotalVisualizacao(450);
         filtro.filtra(episodio);
+
+        Filme filme3 = new Filme("Batman", 2020);
+        filme3.setDuracaoEmMinutos(160);
+        filme3.avaliaFilme(9);
+
+        ArrayList<Filme> listaDeFilmes = new ArrayList<>();
+        listaDeFilmes.add(filme3);
+        listaDeFilmes.add(filme);
+        listaDeFilmes.add(filme2);
+        System.out.println("Tamanho da lista: "+listaDeFilmes.size());
+        System.out.println("Primeiro filme: "+listaDeFilmes.getFirst().getNome());
+        System.out.println(listaDeFilmes);
+        System.out.println("toString do filme: " + listaDeFilmes.getFirst().toString());
 
     }
 }
