@@ -1,4 +1,4 @@
-package br.com.alura.exercicios;
+package br.com.alura.exercicios.produto1;
 
 public class Produto {
     private String nome;

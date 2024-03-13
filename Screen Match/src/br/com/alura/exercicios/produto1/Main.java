@@ -1,4 +1,4 @@
-package br.com.alura.exercicios;
+package br.com.alura.exercicios.produto1;
 
 import java.util.ArrayList;
 
